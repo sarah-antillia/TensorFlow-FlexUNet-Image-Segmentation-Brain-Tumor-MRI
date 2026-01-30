@@ -160,7 +160,7 @@ image_height   = 512
 image_channels = 3
 input_normalize = True
 normalization  = False
-num_classes    = 6
+num_classes    = 4
 base_filters   = 16
 base_kernels  = (11,11)
 num_layers    = 8
@@ -198,13 +198,13 @@ patience      = 10
 </pre>
 <b></b><br>
 <b>RGB color map</b><br>
-rgb color map dict for Brain-Tumor-MRI 1+5 classes.<br>
+rgb color map dict for Brain-Tumor-MRI 1+3 classes.<br>
 <pre>
 [mask]
 mask_file_format = ".png"
-;Brain-Tumor-MRI 1+5
-;         Background,    SRF:blue,    PED:red,      IRF:green,    SHRM:yellow,     IS/OS:cyan     
-rgb_map = {(0,0,0):0,  (0,0,255):1, (255,0,0):2, (0,255,0):3, (255,255,0):4, (0,255,255):5,} 
+;Brain-Tumor-MRI 1+3
+;                   {"Glioma":(255,255,0), "Meningioma":(0,255,0), "Pituitary tumor":(255,0,255)}        
+rgb_map = {(0,0,0):0, (255,255,0):1, (0,255,0):2, (255,0,255):3,}       
 </pre>
 <b>Epoch change inference callbacks</b><br>
 Enabled epoch_change_infer callback.<br>
